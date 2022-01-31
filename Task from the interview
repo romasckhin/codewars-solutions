@@ -18,3 +18,31 @@ const counter = (str) => {
 console.log(counter('222kkz'));
 
 // [3,2,1]
+
+================================================================================================
+
+print the number of duplicate values in the obj
+
+const counter = (str) => {
+  
+  let array = str.split('')
+  let obj = {}
+  let recurringValues = array.filter((el,i) => i === array.indexOf(el))
+  
+  recurringValues.forEach(el => {
+    obj[el] = el
+  })
+  
+  for ( let i = 0; i < recurringValues.length; i++ ) {
+    
+    let fil = array.filter(el => el === recurringValues[i])
+    fil.forEach(el => {
+      obj[el] = fil.length
+    })
+     
+  }
+  
+  return obj
+  
+}
+console.log(counter('222kkzzzz222'));
